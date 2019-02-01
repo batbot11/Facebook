@@ -1,19 +1,13 @@
 import React from "react";
-import {Image} from "semantic-ui-react";
+import {Image, List} from "semantic-ui-react";
 
-const EventListAttendee = () => {
+const EventListAttendee = ({attendee}) => {
     return(
-        <Image.Group>
-            <Image src="https://randomuser.me/api/portraits/men/51.jpg"
+        <List.Item>
+            <Image src= {attendee.photoURL}
             size="mini" circular
             />
-            <Image src="https://randomuser.me/api/portraits/men/51.jpg"
-            size="mini" circular
-            />
-            <Image src="https://randomuser.me/api/portraits/men/51.jpg"
-            size="mini" circular
-            />
-        </Image.Group>
+        </List.Item>
     );
 }
 

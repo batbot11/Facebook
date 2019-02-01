@@ -1,20 +1,20 @@
 import React from "react";
-import {Segment, Item, Icon, Button} from "semantic-ui-react";
+import {Segment, Item, Icon, Button, List} from "semantic-ui-react";
 import EventListAttendee from "./EventListAttendee";
 
-const EventListItem = () => {
+const EventListItem = ({event}) => {
     return(
         <Segment.Group>
             <Segment>
                 <Item.Group>
                     <Item>
-                        <Item.Image src="https://randomuser.me/api/portraits/men/79.jpg"
+                        <Item.Image src= {event.hostPhotoURL}
                         size="tiny" circular
                         />
                         <Item.Content  >
-                            <Item.Header content="Event Name" />
+                            <Item.Header content= {event.title} />
                             <Item.Meta>
-                                Hosted By <a>hostedby</a>
+                                Hosted By <a>{event.hostedBy}</a>
                             </Item.Meta>
                         </Item.Content>
                     </Item>
@@ -24,16 +24,20 @@ const EventListItem = () => {
                 <Item>
                   <span>
                         <Icon name="clock" />
-                    Time  |
-                    <Icon name="marker" /> Place
+                    {event.date}  |
+                    <Icon name="marker" /> {event.venue}
                     </span>
                 </Item>
             </Segment>
             <Segment secondary >
-                <EventListAttendee/>
+                <List horizontal >
+                {event.attendees.map(attendee => (             
+                <EventListAttendee key={attendee.id} attendee = {attendee} /> 
+                ))}
+                </List>
             </Segment>
             <Segment clearing >
-                    Description of the Event
+                 {event.description}
                     <Button negative floated="right" >Delete</Button>
                     <Button primary floated="right" >View</Button>
             </Segment>
