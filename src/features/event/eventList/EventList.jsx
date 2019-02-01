@@ -1,9 +1,12 @@
 import React from "react";
+import EventListItem from "./EventListItem";
 
 const EventList = () => {
     return(
         <div>
-            <h1>Event List</h1>
+            <EventListItem/>
+            <EventListItem/>
+            <EventListItem/>
         </div>
     );
 }

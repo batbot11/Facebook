@@ -20,10 +20,10 @@ const Navbar = () => {
         />
         <Menu.Menu position="right" >
         <Menu.Item>
-            <Button primary >Login</Button>
+            <Button  color = "yellow" >Login</Button>
         </Menu.Item>
         <Menu.Item>
-            <Button primary >Signup</Button>
+            <Button color = "google plus" >Signup</Button>
         </Menu.Item>
         </Menu.Menu>
       </Menu>
